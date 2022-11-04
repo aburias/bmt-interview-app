@@ -9,7 +9,7 @@ namespace bmt.contact.domain.ValueObjects
 {
     public record Mobile
     {
-        public string Value { get; set; }
+        public string Value { get; }
         public Mobile(string value)
         {
             if(!ValidMobileNumber(value))

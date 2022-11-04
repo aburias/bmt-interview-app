@@ -10,7 +10,7 @@ namespace bmt.contact.domain.ValueObjects
 {
     public record Email
     {
-        public string Value { get; set; }
+        public string Value { get; }
 
         public Email(string value)
         {

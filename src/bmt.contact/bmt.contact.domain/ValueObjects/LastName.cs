@@ -9,7 +9,7 @@ namespace bmt.contact.domain.ValueObjects
 {
     public record LastName
     {
-        public string Value { get; set; }
+        public string Value { get; }
 
         public LastName(string value)
         {

@@ -9,7 +9,7 @@ namespace bmt.contact.domain.ValueObjects
 {
     public record CompanyName
     {
-        public string Value { get; set; }
+        public string Value { get; }
 
         public CompanyName(string value)
         {

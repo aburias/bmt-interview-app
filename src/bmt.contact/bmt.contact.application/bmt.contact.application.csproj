@@ -6,4 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\bmt.contact.domain\bmt.contact.domain.csproj" />
+    <ProjectReference Include="..\bmt.shared\bmt.shared.csproj" />
+  </ItemGroup>
+
 </Project>
