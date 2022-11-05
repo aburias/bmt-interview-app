@@ -8,6 +8,6 @@ namespace bmt.contact.infrastructure.EF.Options
 {
     public class MSSqlOptions
     {
-        public string ConnectionString { get; set; }
+        public string DefaultConnection { get; set; }
     }
 }

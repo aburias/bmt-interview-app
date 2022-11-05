@@ -1,5 +1,5 @@
 ﻿using bmt.contact.domain.Factories;
-using bmt.shared;
+using bmt.shared.Commands;
 using bmt.shared.Queries;
 using Microsoft.Extensions.DependencyInjection;
 using System;

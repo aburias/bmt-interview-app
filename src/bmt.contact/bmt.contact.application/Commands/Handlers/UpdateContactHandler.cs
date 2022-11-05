@@ -34,6 +34,9 @@ namespace bmt.contact.application.Commands.Handlers
 
             var contact = await _repository.GetByIdAsync(command.id);
 
+            if(contact is null)
+                throw new ContactNotFoundException();
+
             await _repository.UpdateAsync(contact);
         }
     }
