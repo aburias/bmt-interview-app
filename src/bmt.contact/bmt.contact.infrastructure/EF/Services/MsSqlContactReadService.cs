@@ -30,5 +30,7 @@ namespace bmt.contact.infrastructure.EF.Services
             => await _contacts.AnyAsync(c => c.FirstName.ToLower() == firstName.ToLower()
             && c.LastName.ToLower() == lastName.ToLower()
             && c.Id != id);
+
+        public async Task<bool> IdAlreadyExists(Guid id) => await _contacts.AnyAsync(c => c.Id == id);
     }
 }

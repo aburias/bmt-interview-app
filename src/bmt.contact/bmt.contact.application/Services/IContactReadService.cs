@@ -12,5 +12,6 @@ namespace bmt.contact.application.Services
         Task<bool> ExistsByNameAsync(Guid id, string firstName, string lastName);
 
         Task<bool> DuplicateEmailAsync(Guid id, string email);
+        Task<bool> IdAlreadyExists(Guid id);
     }
 }

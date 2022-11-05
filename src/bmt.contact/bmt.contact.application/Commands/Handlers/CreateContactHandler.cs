@@ -26,6 +26,9 @@ namespace bmt.contact.application.Commands.Handlers
 
         public async Task HandleAsync(CreateContact command)
         {
+            if(await _readService.IdAlreadyExists(command.id))
+                throw new IdAlreadyExistsException();
+
             if(await _readService.ExistsByNameAsync(command.id, command.firstName, command.lastName))
                 throw new ContactAlreadyExistException();
 

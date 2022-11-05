@@ -10,6 +10,6 @@ namespace bmt.contact.application.Queries
 {
     public class SearchContact : IQuery<IEnumerable<ContactDto>>
     {
-        public string SearchPhrase { get; set; }
+        public string? SearchPhrase { get; set; }
     }
 }

@@ -7,5 +7,5 @@ using System.Threading.Tasks;
 
 namespace bmt.contact.application.Commands
 {
-    public record UpdateContact(Guid id, string firstName, string lastName, string companyName, string mobile, string email) : ICommand;
+    public record DeleteContact(Guid id) : ICommand;
 }

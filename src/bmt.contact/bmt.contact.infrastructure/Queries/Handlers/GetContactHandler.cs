@@ -15,7 +15,7 @@ namespace bmt.contact.infrastructure.Queries.Handlers
         public GetContactHandler(ContactReadDbContext context) => _contacts = context.Contacts;
 
         public async Task<ContactDto> HandleAsync(GetContact query) 
-            => await _contacts.Where(c => c.Id == query.Id)
+            => await _contacts.Where(c => c.Id == query.id)
             .Select(c => c.AsDto())
             .AsNoTracking()
             .SingleOrDefaultAsync();

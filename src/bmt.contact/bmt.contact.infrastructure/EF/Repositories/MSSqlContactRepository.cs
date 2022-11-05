@@ -46,6 +46,7 @@ namespace bmt.contact.infrastructure.EF.Repositories
 
         public async Task<Contact> UpdateAsync(Contact entity)
         {
+            //_writeDbContext.Entry(entity).State = EntityState.Modified;
             _contacts.Update(entity);
             await _writeDbContext.SaveChangesAsync();
             return entity;

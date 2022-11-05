@@ -37,6 +37,13 @@ namespace bmt.contact.application.Commands.Handlers
             if(contact is null)
                 throw new ContactNotFoundException();
 
+            // Might need a better way of mapping...
+            contact.FirstName = command.firstName;
+            contact.LastName = command.lastName;
+            contact.Email = command.email;
+            contact.CompanyName = command.companyName;
+            contact.Mobile = command.mobile;
+
             await _repository.UpdateAsync(contact);
         }
     }

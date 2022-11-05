@@ -10,6 +10,6 @@ namespace bmt.contact.application.Queries
 {
     public class GetContact : IQuery<ContactDto>
     {
-        public Guid Id { get; set; }
+        public Guid id { get; set; }
     }
 }

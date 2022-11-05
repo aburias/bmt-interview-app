@@ -4,6 +4,7 @@ using bmt.contact.application.Queries;
 using bmt.shared.abstractions.Commands;
 using bmt.shared.abstractions.Queries;
 using Microsoft.AspNetCore.Mvc;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -31,28 +32,60 @@ namespace bmt.contact.api.Controllers
         [HttpGet("{id:guid}")]
         public async Task<ActionResult<ContactDto>> Get([FromRoute] GetContact query)
         {
-            var result = await _queryDispatcher.QueryAsync(query);
-            return OkOrNotFound(result);
+            try
+            {
+                var result = await _queryDispatcher.QueryAsync(query);
+                return OkOrNotFound(result);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
         // POST api/<ContactController>
         [HttpPost]
-        public async Task<IActionResult> Post(CreateContact command)
+        public async Task<IActionResult> Post([FromBody] CreateContact command)
         {
-            await _commandDispatcher.DispatchAsync(command);
-            return CreatedAtAction(nameof(Get), new { id = command.id }, null);
+            try
+            {
+                await _commandDispatcher.DispatchAsync(command);
+                return CreatedAtAction(nameof(Get), new { id = command.id }, null);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
         // PUT api/<ContactController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        [HttpPut]
+        public async Task<IActionResult> Put([FromBody] UpdateContact command)
         {
+            try
+            {
+                await _commandDispatcher.DispatchAsync(command);
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
         // DELETE api/<ContactController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
+        [HttpDelete("{id:guid}")]
+        public async Task<IActionResult> Delete([FromRoute] DeleteContact command)
         {
+            try
+            {
+                await _commandDispatcher.DispatchAsync(command);
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
     }
 }
