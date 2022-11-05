@@ -7,13 +7,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{4C8C74AB-51F
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{5C964A46-B963-4044-AA70-3F17E7C6C201}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bmt.contact.domain", "bmt.contact.domain\bmt.contact.domain.csproj", "{02750E06-1B1E-47F4-A7BF-480F9C95A28E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "bmt.contact.domain", "bmt.contact.domain\bmt.contact.domain.csproj", "{02750E06-1B1E-47F4-A7BF-480F9C95A28E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bmt.contact.infrastructure", "bmt.contact.infrastructure\bmt.contact.infrastructure.csproj", "{8D6CF4A6-2A7E-4EF9-8427-E62AC89FB15F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "bmt.contact.infrastructure", "bmt.contact.infrastructure\bmt.contact.infrastructure.csproj", "{8D6CF4A6-2A7E-4EF9-8427-E62AC89FB15F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bmt.contact.application", "bmt.contact.application\bmt.contact.application.csproj", "{84D75373-7822-4B2D-9261-129A1EE0E54B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "bmt.contact.application", "bmt.contact.application\bmt.contact.application.csproj", "{84D75373-7822-4B2D-9261-129A1EE0E54B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bmt.contact.api", "bmt.contact.api\bmt.contact.api.csproj", "{9DEFBA9F-48D9-4ACD-9AD9-132EAE6C85FE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "bmt.contact.api", "bmt.contact.api\bmt.contact.api.csproj", "{9DEFBA9F-48D9-4ACD-9AD9-132EAE6C85FE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{1DC7588C-7C34-4BE2-BE0F-E6490FD849FE}"
 EndProject
@@ -22,9 +22,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.editorconfig = .editorconfig
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bmt.shared.abstractions", "bmt.shared.abstractions\bmt.shared.abstractions.csproj", "{7EDB6E22-ED3C-42E7-802C-24961C09328B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "bmt.shared.abstractions", "bmt.shared.abstractions\bmt.shared.abstractions.csproj", "{7EDB6E22-ED3C-42E7-802C-24961C09328B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bmt.shared", "bmt.shared\bmt.shared.csproj", "{8B715573-A11E-43EB-AC2C-53755AD914A9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "bmt.shared", "bmt.shared\bmt.shared.csproj", "{8B715573-A11E-43EB-AC2C-53755AD914A9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "bmt.contact.web", "bmt.contact.web\bmt.contact.web.csproj", "{D0468813-B3E6-4D70-8922-3EA6C6695983}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -56,6 +58,10 @@ Global
 		{8B715573-A11E-43EB-AC2C-53755AD914A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8B715573-A11E-43EB-AC2C-53755AD914A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8B715573-A11E-43EB-AC2C-53755AD914A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0468813-B3E6-4D70-8922-3EA6C6695983}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0468813-B3E6-4D70-8922-3EA6C6695983}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0468813-B3E6-4D70-8922-3EA6C6695983}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0468813-B3E6-4D70-8922-3EA6C6695983}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -68,6 +74,7 @@ Global
 		{1DC7588C-7C34-4BE2-BE0F-E6490FD849FE} = {4C8C74AB-51F3-468C-B2BB-C0622780C363}
 		{7EDB6E22-ED3C-42E7-802C-24961C09328B} = {1DC7588C-7C34-4BE2-BE0F-E6490FD849FE}
 		{8B715573-A11E-43EB-AC2C-53755AD914A9} = {1DC7588C-7C34-4BE2-BE0F-E6490FD849FE}
+		{D0468813-B3E6-4D70-8922-3EA6C6695983} = {4C8C74AB-51F3-468C-B2BB-C0622780C363}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B4697B78-2AC0-4CB3-92D2-E58ABB5248CF}

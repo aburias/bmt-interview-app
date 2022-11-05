@@ -1,0 +1,58 @@
+﻿@page
+@model bmt.contact.web.Pages.CreateContactModel
+@{
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <a asp-page="/Contacts" class="btn btn-lg btn-primary">Back to List</a>
+    </div>
+</div>
+<hr />
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h1>Create New Contact</h1>
+            </div>
+            <div class="card-body">
+                @if (!string.IsNullOrEmpty(ViewData["Message"]?.ToString()))
+                {
+                    <p class="alert alert-danger">@ViewData["Message"]</p>
+                }
+                <form method="post">
+                    <div asp-validation-summary="All"></div>
+                    <input type="hidden" asp-for="Contact.Id" />
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label asp-for="Contact.FirstName"></label>
+                            <input asp-for="Contact.FirstName" class="form-control" />
+                            <label asp-for="Contact.LastName"></label>
+                            <input asp-for="Contact.LastName" class="form-control" />
+                            <label asp-for="Contact.CompanyName"></label>
+                            <input asp-for="Contact.CompanyName" class="form-control" />
+                        </div>
+                        <div class="col-md-6">
+                            <label asp-for="Contact.Mobile"></label>
+                            <input asp-for="Contact.Mobile" class="form-control" />
+                            <label asp-for="Contact.Email"></label>
+                            <input asp-for="Contact.Email" class="form-control" />
+                        </div>
+                    </div>
+                    <hr />
+                    <div class="row">
+                        <div class="col-md-12">
+                            <input type="submit" class="btn btn-primary" value="Create" />
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<hr />
+<div class="row">
+    <div class="col-md-12">
+        <a asp-page="/Contacts" class="btn btn-lg btn-primary">Back to List</a>
+    </div>
+</div>
