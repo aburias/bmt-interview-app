@@ -14,7 +14,7 @@ namespace bmt.contact.domain.ValueObjects
 
         public Email(string value)
         {
-            if(ValidEmail(value))
+            if(!ValidEmail(value))
                 throw new InvalidEmailAddressException();
 
             Value = value;

@@ -23,12 +23,12 @@ namespace bmt.contact.infrastructure.EF.Services
         }
 
         public async Task<bool> DuplicateEmailAsync(Guid id, string email) 
-            => await _contacts.AnyAsync(c => c.Email.Equals(email, StringComparison.InvariantCultureIgnoreCase)
+            => await _contacts.AnyAsync(c => c.Email.ToLower() == email.ToLower() 
             && c.Id != id);
 
         public async Task<bool> ExistsByNameAsync(Guid id, string firstName, string lastName)
-            => await _contacts.AnyAsync(c => c.FirstName.Equals(firstName, StringComparison.InvariantCultureIgnoreCase)
-            && c.LastName.Equals(lastName, StringComparison.InvariantCultureIgnoreCase)
+            => await _contacts.AnyAsync(c => c.FirstName.ToLower() == firstName.ToLower()
+            && c.LastName.ToLower() == lastName.ToLower()
             && c.Id != id);
     }
 }

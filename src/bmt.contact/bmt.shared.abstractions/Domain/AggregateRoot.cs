@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,6 +10,9 @@ namespace bmt.shared.abstractions.Domain
     public abstract class AggregateRoot<T>
     {
         public T Id { get; protected set; }
+
+        #region Domain Events...Maybe next time
+        [NotMapped]
         public int Version { get; protected set; }
         public IEnumerable<IDomainEvent> Events => _events;
 
@@ -17,7 +21,7 @@ namespace bmt.shared.abstractions.Domain
 
         protected void AddEvent(IDomainEvent @event)
         {
-            if(!_events.Any() && !_versionIncremented)
+            if (!_events.Any() && !_versionIncremented)
             {
                 Version++;
                 _versionIncremented = true;
@@ -30,11 +34,12 @@ namespace bmt.shared.abstractions.Domain
 
         protected void IncrementVersion()
         {
-            if(_versionIncremented)
+            if (_versionIncremented)
                 return;
 
             Version++;
             _versionIncremented = true;
         }
+        #endregion
     }
 }
