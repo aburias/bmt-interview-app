@@ -1,4 +1,5 @@
 ﻿using bmt.contact.domain.Entities;
+using bmt.contact.infrastructure.EF.Config;
 using bmt.contact.infrastructure.EF.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -21,6 +22,10 @@ namespace bmt.contact.infrastructure.EF.Contexts
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.HasDefaultSchema("bmt");
+
+            var config = new WriteConfiguration();
+            modelBuilder.ApplyConfiguration<Contact>(config);
+
             base.OnModelCreating(modelBuilder);
         }
     }

@@ -20,7 +20,7 @@ namespace bmt.contact.infrastructure.EF.Contexts
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.HasDefaultSchema("contact");
+            modelBuilder.HasDefaultSchema("bmt");
 
             var config = new ReadConfiguration();
             modelBuilder.ApplyConfiguration<ContactReadModel>(config);
