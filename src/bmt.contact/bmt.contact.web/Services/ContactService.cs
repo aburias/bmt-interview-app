@@ -38,5 +38,10 @@ namespace bmt.contact.web.Services
         {
             var results = await ApiHelpers.ExecuteApiAsync<dynamic>(_baseUrl, _endpoint, RestSharp.Method.Put, null, contact);
         }
+
+        public async Task DeleteAsync(Guid contactId)
+        {
+            var results = await ApiHelpers.ExecuteApiAsync<dynamic>(_baseUrl, $"{_endpoint}/{contactId}", RestSharp.Method.Delete, null, null);
+        }
     }
 }

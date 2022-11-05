@@ -17,6 +17,12 @@
                 <h1>Create New Contact</h1>
             </div>
             <div class="card-body">
+                <form method="post">
+                    <input type="hidden" asp-for="ContactId" />
+                    <p>Are you sure you want to delete contact?</p>
+                    <input type="submit" class="btn btn-danger" value="Yes" />
+                    <a asp-page="/Contacts" class="btn btn-primary">No</a>
+                </form>
             </div>
         </div>
     </div>
