@@ -27,5 +27,16 @@ namespace bmt.contact.web.Services
             var results = await ApiHelpers.ExecuteApiAsync<List<ContactViewModel>>(_baseUrl, _endpoint, RestSharp.Method.Get, null, null);
             return results ?? new List<ContactViewModel>();
         }
+
+        public async Task<ContactViewModel> GetByIdAsync(Guid id)
+        {
+            var results = await ApiHelpers.ExecuteApiAsync<ContactViewModel>(_baseUrl, $"{_endpoint}/{id}", RestSharp.Method.Get, null, null);
+            return results ?? new ContactViewModel();
+        }
+
+        public async Task UpdateAsync(ContactViewModel contact)
+        {
+            var results = await ApiHelpers.ExecuteApiAsync<dynamic>(_baseUrl, _endpoint, RestSharp.Method.Put, null, contact);
+        }
     }
 }

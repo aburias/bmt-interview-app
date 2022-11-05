@@ -6,5 +6,7 @@ namespace bmt.contact.web.Services
     {
         Task CreateAsync(ContactViewModel contact);
         Task<List<ContactViewModel>> GetAllAsync();
+        Task<ContactViewModel> GetByIdAsync(Guid id);
+        Task UpdateAsync(ContactViewModel contact);
     }
 }
